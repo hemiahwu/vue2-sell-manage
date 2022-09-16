@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { checkAccount, checkPassword } from "@/utils/validator.js";
 export default {
   data() {
     return {
@@ -45,13 +46,9 @@ export default {
       },
       visible: false,
       rules: {
-        account: [
-          { required: true, message: "请输入账号", trigger: "blur" },
-          { min: 3, max: 6, message: "长度在 3 到 6 个字符", trigger: "blur" },
-        ],
+        account: [{ required: true, validator: checkAccount, trigger: "blur" }],
         password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 3, max: 6, message: "长度在 3 到 6 个字符", trigger: "blur" },
+          { required: true, validator: checkPassword, trigger: "blur" },
         ],
       },
     };

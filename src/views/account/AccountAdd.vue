@@ -12,6 +12,7 @@
           ref="accountForm"
           label-width="100px"
           :rules="rules"
+          status-icon
         >
           <el-form-item label="账号" prop="account">
             <el-input v-model="accountForm.account"></el-input>
@@ -44,28 +45,9 @@
 </template>
 
 <script>
+import { checkAccount, checkPassword } from "@/utils/validator.js";
 export default {
   data() {
-    const checkAccount = (rule, value, callback) => {
-      if (!value.trim()) {
-        callback(new Error("内容不能为空"));
-      } else if (!/^[A-Za-z0-9\u4e00-\u9fa5]{3,15}$/.test(value)) {
-        callback(new Error("字母/数字或汉字组成 3 ~ 15位"));
-      } else {
-        callback();
-      }
-    };
-
-    const checkPassword = (rule, value, callback) => {
-      if (!value.trim()) {
-        callback(new Error("内容不能为空"));
-      } else if (!/^[A-Za-z0-9]{6,12}$/.test(value)) {
-        callback(new Error("字母/数字组成 6 ~ 12位"));
-      } else {
-        callback();
-      }
-    };
-
     return {
       accountForm: {
         account: "",
