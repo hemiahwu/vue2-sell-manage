@@ -19,13 +19,13 @@
       </el-col>
       <!-- 退出系统 -->
       <el-col :span="12" class="right-box">
-        <el-dropdown>
+        <el-dropdown @command="handleCommand">
           <span class="el-dropdown-link">
             欢迎您,Henry<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="a">个人中心</el-dropdown-item>
-            <el-dropdown-item command="b">退出系统</el-dropdown-item>
+            <el-dropdown-item command="personal">个人中心</el-dropdown-item>
+            <el-dropdown-item command="logout">退出系统</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
 
@@ -44,11 +44,7 @@ export default {
       circleUrl:
         "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
 
-      breads: [
-        // { path: "/home", title: "首页" },
-        // { path: "/account", title: "账号列表" },
-        // { path: "/account/passwordmodify", title: "修改密码" },
-      ],
+      breads: [],
     };
   },
   created() {
@@ -65,9 +61,12 @@ export default {
     this.calcBreads();
   },
   methods: {
+    handleCommand(command) {
+      if (command === "personal") this.$router.push("/account/personal");
+      if (command === "logout") this.$router.push("/login");
+    },
     changeCollapse() {
       this.isCollapse = !this.isCollapse;
-
       // 告诉导航组件
       this.$bus.$emit("changeCollapse", this.isCollapse);
     },
@@ -75,7 +74,6 @@ export default {
     calcBreads() {
       // console.log(this.$route.matched);
       const temp = [{ path: "/home", title: "首页" }];
-
       const routes = this.$route.matched
         .filter((v) => v.meta.title)
         .map((v) => ({ path: v.path, title: v.meta.title }));
