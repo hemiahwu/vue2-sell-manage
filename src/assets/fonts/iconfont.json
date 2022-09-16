@@ -1,0 +1,72 @@
+{
+  "id": "3062159",
+  "name": "sell-manage",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "200968",
+      "name": "3.1店铺",
+      "font_class": "shop",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "201644",
+      "name": "3.1 全部商品",
+      "font_class": "goods",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2076282",
+      "name": " 订单",
+      "font_class": "order",
+      "unicode": "e897",
+      "unicode_decimal": 59543
+    },
+    {
+      "icon_id": "3456455",
+      "name": "首页",
+      "font_class": "home",
+      "unicode": "e70e",
+      "unicode_decimal": 59150
+    },
+    {
+      "icon_id": "7127389",
+      "name": "统计",
+      "font_class": "total",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "7155561",
+      "name": "密码",
+      "font_class": "pass",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "10281814",
+      "name": "账号",
+      "font_class": "account",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "23776613",
+      "name": "闭着眼睛4",
+      "font_class": "eye-close",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "24917062",
+      "name": "眼睛",
+      "font_class": "eye-open",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    }
+  ]
+}
